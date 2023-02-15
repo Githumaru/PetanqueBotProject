@@ -1,0 +1,4 @@
+pandas==1.5.2
+pickleshare==0.7.5
+base64==3.10.5
+pyTelegramBotAPI==4.8.0
