@@ -37,7 +37,7 @@ When this option is selected, the bot prompts to choose a player and displays hi
 Authors
 This project was created by Vyacheslav Trofimov
 
-![show rating and add match result]([url](https://github.com/Githumaru/PetangBotProject/blob/main/show%20rating%20and%20add%20match%20result.jpg?raw=true))
-![add match result and show rating]([url](https://github.com/Githumaru/PetangBotProject/blob/main/add%20match%20result%20and%20show%20rating%20.jpg?raw=true))
-![add a new player and show rating]([url](https://github.com/Githumaru/PetangBotProject/blob/main/add%20a%20new%20player%20and%20show%20rating.jpg?raw=true))
-![show rank]([url](https://github.com/Githumaru/PetangBotProject/blob/main/show%20rank.jpg?raw=true))
+![show rating and add match result](https://github.com/Githumaru/PetangBotProject/blob/main/show%20rating%20and%20add%20match%20result.png?raw=true)
+![add match result and show rating](https://github.com/Githumaru/PetangBotProject/blob/main/add%20match%20result%20and%20show%20rating%20.png?raw=true)
+![add a new player and show rating](https://github.com/Githumaru/PetangBotProject/blob/main/add%20a%20new%20player%20and%20show%20rating.png?raw=true)
+![show rank](https://github.com/Githumaru/PetangBotProject/blob/main/show%20rank.png?raw=true)
