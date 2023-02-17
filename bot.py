@@ -5,7 +5,7 @@ import telebot
 from telebot import types
 
 
-adress = 'C:\\PyProdjects\\Telegram\\Petanque\\DataBase.csv'
+adress = 'https://github.com/Githumaru/PetangBotProject/blob/main/Petanque.csv'
 
 class Player:
 
