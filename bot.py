@@ -40,7 +40,7 @@ class Player:
         table.to_csv(adress, sep=';', index=False)
 
 
-bot = telebot.TeleBot(token='5854201004:AAEA_OJhqgT0bYvfTnqN34Ft2nvYjXdzdhE')
+bot = telebot.TeleBot(token=token)
 
 
 @bot.message_handler(content_types=['text'])
