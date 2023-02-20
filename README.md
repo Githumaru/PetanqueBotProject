@@ -1,5 +1,5 @@
 # PetanqueBotProject
-This project is a Telegram bot for tracking the ratings of players in a game, using the ELO rating system.
+This project is a Telegram bot for tracking the ratings of players in a game, using the Elo rating system.
 
 ## The bot has a starting menu with four buttons:
 
@@ -26,7 +26,7 @@ Run the bot using the command: python bot.py.
 When this option is selected, the bot prompts to enter the name of a new player. After the name is entered, the player is given an initial score and added to the csv-file with other players.
 
 ### Add match
-When this option is selected, the bot prompts to choose two players who played against each other, specify the match result (win, lose, or draw), and updates their score in the csv-file using the ELO system.
+When this option is selected, the bot prompts to choose two players who played against each other, specify the match result (win, lose, or draw), and updates their score in the csv-file using the Elo system.
 
 ### Show rating
 When this option is selected, the bot displays a list of all players and their score in descending order.
