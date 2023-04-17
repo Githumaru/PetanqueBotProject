@@ -116,7 +116,7 @@ def create_player(message):
 
 @bot.callback_query_handler(func=lambda call: call.data == 'Add a new player')
 def add_player_callback(call):
-    '''called when pressed the button "Add a new player" on the main menu. it is calling function create_player which create a new player'''
+    '''called when pressing the button "Add a new player" on the main menu. it is calling function create_player which create a new player'''
     bot.send_message(chat_id=call.message.chat.id,
                      text='Write the name of the player here:')
     bot.register_next_step_handler(call.message, create_player)
@@ -124,7 +124,7 @@ def add_player_callback(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == 'Add match result')
 def add_match_callback(call):
-    '''called when pressed the button "Add match result" on the main menu. it is creating keyboard for choosing first player in couple'''
+    '''called when pressing the button "Add match result" on the main menu. it is creating keyboard for choosing first player in couple'''
     bot.send_message(chat_id=call.message.chat.id,
                      text='Choose first player:',
                      reply_markup=create_keyboard_for_first_player())
@@ -132,7 +132,7 @@ def add_match_callback(call):
 
 @bot.callback_query_handler(func=lambda call: call.data in map(lambda x: x.name, Player.list_of_players))
 def add_first_player(call):
-    '''called when choosed the first player. it is adding this player to list_players and creating keyboard for choosing second player in couple'''
+    '''called when choosing the first player. it is adding this player to list_players and creating keyboard for choosing second player in couple'''
     global list_players
     list_players = [call.data]
     bot.send_message(chat_id=call.message.chat.id,
@@ -142,7 +142,7 @@ def add_first_player(call):
 
 @bot.callback_query_handler(func=lambda call: call.data in map(lambda x: f'+{x.name}', Player.list_of_players))
 def add_second_player(call):
-    '''called when choosed the second player. it is adding this player to list_players, creating list players_class which
+    '''called when choosing the second player. it is adding this player to list_players, creating list players_class which
     contains data of these players and creating keyboard for choosing result of their game'''
     list_players.append(call.data[1:])
     global players_class
@@ -154,7 +154,7 @@ def add_second_player(call):
 
 @bot.callback_query_handler(func=lambda call: call.data in ['1', '0', '0.5'])
 def add_score(call):
-    '''called when choosed the game result. it is calling the method match for choosed players and creating the main keyboard'''
+    '''called when choosing the game result. it is calling the method match for choosed players and creating the main keyboard'''
     players_class[0].match(players_class[1], call.data)
     bot.send_message(chat_id=call.message.chat.id,
                      text='The rating has been changed')
@@ -165,7 +165,7 @@ def add_score(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == 'Show rating')
 def rating_callback(call):
-    '''called when pressed the button "Show rating". it is showing rating of all players in order from the strongest to the weakest'''
+    '''called when pressing the button "Show rating". it is showing rating of all players in order from the strongest to the weakest'''
     Player.list_of_players.sort(key=lambda x: x.score, reverse=True)
     for player in Player.list_of_players:
         bot.send_message(chat_id=call.message.chat.id,
@@ -174,7 +174,7 @@ def rating_callback(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == 'Show rank')
 def rank_callback(call):
-    '''called when pressed the button "Show rank" on the main menu. it is creating keyboard for choosing player'''
+    '''called when pressing the button "Show rank" on the main menu. it is creating keyboard for choosing player'''
     bot.send_message(chat_id=call.message.chat.id,
                      text='Choose player:',
                      reply_markup=create_keyboard_for_rank())
@@ -182,7 +182,7 @@ def rank_callback(call):
 
 @bot.callback_query_handler(func=lambda call: call.data in map(lambda x: f'{x.name}+', Player.list_of_players))
 def rank(call):
-    '''called when choosed the player. it is showing his rating'''
+    '''called when choosing the player. it is showing his rating'''
     player = [i for i in Player.list_of_players if i.name == call.data[:-1]][0]
     bot.send_message(chat_id=call.message.chat.id,
                      text=f'{player.name}: {int(player.score)}, {Player.list_of_players.index(player) + 1}')
